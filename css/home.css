@@ -165,11 +165,39 @@ html:has(.opening[open]) { overflow: hidden; scrollbar-gutter: stable; }
 .home-contact .copy { margin-top: 9px; }
 .home-contact .button { flex: none; }
 .home-contact .button { min-width: 188px; }
-.shop-copy .button:is(:hover, :focus-visible, :active),
-.home-contact .button:is(:hover, :focus-visible, :active) {
+.shop-copy .button,
+.home-contact .button {
+  min-height: 66px;
+  padding: 19px 26px;
+  border: 1px solid #54664b;
+  border-radius: 8px;
+  background: #66735f;
+  color: #fff;
+  box-shadow: 0 4px 0 #42513a, inset 0 1px 0 #ffffff30;
+  font: 600 1rem/1.65 var(--sans);
+  letter-spacing: .05em;
+  transition: background-color .25s, box-shadow .2s, transform .2s;
+}
+.home-contact .button {
+  min-width: 234px;
+  background: #f8f6f1;
+  color: #43513c;
+  box-shadow: 0 4px 0 #a0aa95, inset 0 1px 0 #fff;
+}
+.shop-copy .button:is(:hover, :focus-visible) {
+  background: #506447;
+  box-shadow: 0 5px 0 #35462f, inset 0 1px 0 #ffffff30;
+  transform: translateY(-1px);
+}
+.home-contact .button:is(:hover, :focus-visible) {
   background: #d5ddcd;
-  border-color: #414f3b;
-  color: #414f3b;
+  box-shadow: 0 5px 0 #87967b, inset 0 1px 0 #ffffff70;
+  transform: translateY(-1px);
+}
+.shop-copy .button:active,
+.home-contact .button:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #54664b;
 }
 
 @media (prefers-reduced-motion: no-preference) {
